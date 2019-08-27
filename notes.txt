@@ -1,0 +1,17 @@
+#workflow
+
+# check clusters
+drv.clusters.get.sh
+
+# login to cluster
+
+
+# get script
+./cmd.clusters.script.get.sh dc-cluster-west
+
+
+# run script
+./cmd.clusters.script.get.sh dc-cluster-west
+
+
+

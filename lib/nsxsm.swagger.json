@@ -1,0 +1,3917 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "v1.2.3",
+		"title": "allspark-api-gw"
+	},
+	"basePath": "/v0",
+	"paths": {
+		"/users/{id}/accessTokens/{fk}": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Find a related item by id for accessTokens.",
+				"operationId": "user.prototype.__findById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/AccessToken"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"user"
+				],
+				"summary": "Delete a related item by id for accessTokens.",
+				"operationId": "user.prototype.__destroyById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"user"
+				],
+				"summary": "Update a related item by id for accessTokens.",
+				"operationId": "user.prototype.__updateById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/AccessToken"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/AccessToken"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/UserRoles/{fk}": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Find a related item by id for UserRoles.",
+				"operationId": "user.prototype.__findById__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for UserRoles",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/UserRoleModel"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"user"
+				],
+				"summary": "Delete a related item by id for UserRoles.",
+				"operationId": "user.prototype.__destroyById__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for UserRoles",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"user"
+				],
+				"summary": "Update a related item by id for UserRoles.",
+				"operationId": "user.prototype.__updateById__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for UserRoles",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/UserRoleModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/UserRoleModel"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/accessTokens": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Queries accessTokens of user.",
+				"operationId": "user.prototype.__get__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/AccessToken"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Creates a new instance in accessTokens of this model.",
+				"operationId": "user.prototype.__create__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/AccessToken"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/AccessToken"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"user"
+				],
+				"summary": "Deletes all accessTokens of this model.",
+				"operationId": "user.prototype.__delete__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/accessTokens/count": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Counts accessTokens of user.",
+				"operationId": "user.prototype.__count__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"count": {
+									"type": "number",
+									"format": "double"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/UserRoles": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Queries UserRoles of user.",
+				"operationId": "user.prototype.__get__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/UserRoleModel"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Creates a new instance in UserRoles of this model.",
+				"operationId": "user.prototype.__create__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/UserRoleModel"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/UserRoleModel"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"user"
+				],
+				"summary": "Deletes all UserRoles of this model.",
+				"operationId": "user.prototype.__delete__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/UserRoles/count": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Counts UserRoles of user.",
+				"operationId": "user.prototype.__count__UserRoles",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"count": {
+									"type": "number",
+									"format": "double"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Create a new instance of the model and persist it into the data source.",
+				"operationId": "user.create",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"user"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "user.replaceOrCreate__put_users",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Find all instances of the model matched by filter from the data source.",
+				"operationId": "user.find",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/user"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/replaceOrCreate": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "user.replaceOrCreate__post_users_replaceOrCreate",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/upsertWithWhere": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+				"operationId": "user.upsertWithWhere",
+				"parameters": [
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Find a model instance by {{id}} from the data source.",
+				"operationId": "user.findById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"user"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "user.replaceById__put_users_{id}",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"user"
+				],
+				"summary": "Delete a model instance by {{id}} from the data source.",
+				"operationId": "user.deleteById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"user"
+				],
+				"summary": "Patch attributes for a model instance and persist it into the data source.",
+				"operationId": "user.prototype.patchAttributes",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/replace": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "user.replaceById__post_users_{id}_replace",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/findOne": {
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Find first instance of the model matched by filter from the data source.",
+				"operationId": "user.findOne",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/change-stream": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Create a change stream.",
+				"operationId": "user.createChangeStream__post_users_change-stream",
+				"parameters": [
+					{
+						"name": "options",
+						"in": "formData",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "file"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"user"
+				],
+				"summary": "Create a change stream.",
+				"operationId": "user.createChangeStream__get_users_change-stream",
+				"parameters": [
+					{
+						"name": "options",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "file"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/login": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Login a user with username/email and password.",
+				"operationId": "user.login",
+				"parameters": [
+					{
+						"name": "credentials",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"type": "object"
+						}
+					},
+					{
+						"name": "include",
+						"in": "query",
+						"description": "Related objects to include in the response. See the description of return value for more details.",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"description": "The response body contains properties of the AccessToken created on login.\nDepending on the value of `include` parameter, the body may contain additional properties:\n\n  - `user` - `U+007BUserU+007D` - Data of the currently logged in user. (`include=user`)\n\n",
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/logout": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Logout a user with access token.",
+				"operationId": "user.logout",
+				"parameters": [],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/verify": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Trigger user's identity verification with configured verifyOptions",
+				"operationId": "user.prototype.verify",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "user id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/reset": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Reset password for a user with email.",
+				"operationId": "user.resetPassword",
+				"parameters": [
+					{
+						"name": "options",
+						"in": "body",
+						"required": true,
+						"schema": {
+							"type": "object"
+						}
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/change-password": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Change a user's password.",
+				"operationId": "user.changePassword",
+				"parameters": [
+					{
+						"name": "oldPassword",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "newPassword",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/reset-password": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"summary": "Reset user's password via a password-reset token.",
+				"operationId": "user.setPassword",
+				"parameters": [
+					{
+						"name": "newPassword",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/AssignRole": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"operationId": "user.assignRole",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "roleId",
+						"in": "formData",
+						"required": true,
+						"type": "number",
+						"format": "double"
+					},
+					{
+						"name": "modelName",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "modelId",
+						"in": "formData",
+						"required": false,
+						"type": "number",
+						"format": "double"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/users/{id}/RevokeRole": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"operationId": "user.revokeRole",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "roleId",
+						"in": "formData",
+						"required": true,
+						"type": "number",
+						"format": "double"
+					},
+					{
+						"name": "modelName",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "modelId",
+						"in": "formData",
+						"required": false,
+						"type": "number",
+						"format": "double"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/users/{fk}": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Find a related item by id for users.",
+				"operationId": "tenant.prototype.__findById__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for users",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Delete a related item by id for users.",
+				"operationId": "tenant.prototype.__destroyById__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for users",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Update a related item by id for users.",
+				"operationId": "tenant.prototype.__updateById__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for users",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/accessTokens/{fk}": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Find a related item by id for accessTokens.",
+				"operationId": "tenant.prototype.__findById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantToken"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Delete a related item by id for accessTokens.",
+				"operationId": "tenant.prototype.__destroyById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Update a related item by id for accessTokens.",
+				"operationId": "tenant.prototype.__updateById__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "fk",
+						"in": "path",
+						"description": "Foreign key for accessTokens",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/tenantToken"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantToken"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/config": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Fetches hasOne relation config.",
+				"operationId": "tenant.prototype.__get__config",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "refresh",
+						"in": "query",
+						"required": false,
+						"type": "boolean"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantClusterConfig"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Creates a new instance in config of this model.",
+				"operationId": "tenant.prototype.__create__config",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/tenantClusterConfig"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantClusterConfig"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Update config of this model.",
+				"operationId": "tenant.prototype.__update__config",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/tenantClusterConfig"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantClusterConfig"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Deletes config of this model.",
+				"operationId": "tenant.prototype.__destroy__config",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/users": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Queries users of tenant.",
+				"operationId": "tenant.prototype.__get__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/user"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Creates a new instance in users of this model.",
+				"operationId": "tenant.prototype.__create__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/user"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Deletes all users of this model.",
+				"operationId": "tenant.prototype.__delete__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/users/count": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Counts users of tenant.",
+				"operationId": "tenant.prototype.__count__users",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"count": {
+									"type": "number",
+									"format": "double"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/accessTokens": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Queries accessTokens of tenant.",
+				"operationId": "tenant.prototype.__get__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/tenantToken"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Creates a new instance in accessTokens of this model.",
+				"operationId": "tenant.prototype.__create__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"required": false,
+						"schema": {
+							"$ref": "#/definitions/tenantToken"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenantToken"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Deletes all accessTokens of this model.",
+				"operationId": "tenant.prototype.__delete__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/accessTokens/count": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Counts accessTokens of tenant.",
+				"operationId": "tenant.prototype.__count__accessTokens",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"count": {
+									"type": "number",
+									"format": "double"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants": {
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Create a new instance of the model and persist it into the data source.",
+				"operationId": "tenant.create",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "tenant.replaceOrCreate__put_tenants",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Find all instances of the model matched by filter from the data source.",
+				"operationId": "tenant.find",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/tenant"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/replaceOrCreate": {
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "tenant.replaceOrCreate__post_tenants_replaceOrCreate",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/upsertWithWhere": {
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+				"operationId": "tenant.upsertWithWhere",
+				"parameters": [
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Find a model instance by {{id}} from the data source.",
+				"operationId": "tenant.findById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "tenant.replaceById__put_tenants_{id}",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Delete a model instance by {{id}} from the data source.",
+				"operationId": "tenant.deleteById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Patch attributes for a model instance and persist it into the data source.",
+				"operationId": "tenant.prototype.patchAttributes",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "tenant id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/{id}/replace": {
+			"post": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "tenant.replaceById__post_tenants_{id}_replace",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/findOne": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "Find first instance of the model matched by filter from the data source.",
+				"operationId": "tenant.findOne",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/tenant"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/status": {
+			"get": {
+				"tags": [
+					"tenant"
+				],
+				"operationId": "tenant.getStatus",
+				"parameters": [
+					{
+						"name": "tenantID",
+						"in": "query",
+						"description": "if not provided we will use csp org id (jwt)",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"description": "{lifeCycle: {state: 'NOT_PRESENT' | 'CREATING' | 'LIVE' |  'DELETING' | 'ERROR', tenantName: string, tenantID: string, details: string }",
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/instance": {
+			"put": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "initiates tenant creation",
+				"operationId": "tenant.createAsync",
+				"parameters": [
+					{
+						"name": "tenantName",
+						"in": "formData",
+						"description": "if not provided we will use csp org id (jwt)",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "contactEmail",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "address",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "companySize",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"description": "{tenantID: string}",
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/tenants/instance/{tenantID}": {
+			"delete": {
+				"tags": [
+					"tenant"
+				],
+				"summary": "initiates tenant deletion",
+				"operationId": "tenant.deleteAsync",
+				"parameters": [
+					{
+						"name": "tenantID",
+						"in": "path",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/installMails/send": {
+			"post": {
+				"tags": [
+					"installMail"
+				],
+				"operationId": "installMail.send",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"mail": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries": {
+			"post": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Create a new instance of the model and persist it into the data source.",
+				"operationId": "timeseries.create",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "timeseries.replaceOrCreate__put_timeseries",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Find all instances of the model matched by filter from the data source.",
+				"operationId": "timeseries.find",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/timeseries"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries/replaceOrCreate": {
+			"post": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Replace an existing model instance or insert a new one into the data source.",
+				"operationId": "timeseries.replaceOrCreate__post_timeseries_replaceOrCreate",
+				"parameters": [
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries/upsertWithWhere": {
+			"post": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Update an existing model instance or insert a new one into the data source based on the where criteria.",
+				"operationId": "timeseries.upsertWithWhere",
+				"parameters": [
+					{
+						"name": "where",
+						"in": "query",
+						"description": "Criteria to match model instances",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries/{id}": {
+			"get": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Find a model instance by {{id}} from the data source.",
+				"operationId": "timeseries.findById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields and include - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"put": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "timeseries.replaceById__put_timeseries_{id}",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Delete a model instance by {{id}} from the data source.",
+				"operationId": "timeseries.deleteById",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"patch": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Patch attributes for a model instance and persist it into the data source.",
+				"operationId": "timeseries.prototype.patchAttributes",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "timeseries id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "An object of model property name/value pairs",
+						"required": false,
+						"schema": {
+							"description": "An object of model property name/value pairs",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries/{id}/replace": {
+			"post": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Replace attributes for a model instance and persist it into the data source.",
+				"operationId": "timeseries.replaceById__post_timeseries_{id}_replace",
+				"parameters": [
+					{
+						"name": "id",
+						"in": "path",
+						"description": "Model id",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "data",
+						"in": "body",
+						"description": "Model instance data",
+						"required": false,
+						"schema": {
+							"description": "Model instance data",
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/timeseries/findOne": {
+			"get": {
+				"tags": [
+					"timeseries"
+				],
+				"summary": "Find first instance of the model matched by filter from the data source.",
+				"operationId": "timeseries.findOne",
+				"parameters": [
+					{
+						"name": "filter",
+						"in": "query",
+						"description": "Filter defining fields, where, include, order, offset, and limit - must be a JSON-encoded string ({\"something\":\"value\"})",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"$ref": "#/definitions/timeseries"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/cluster-agent-script": {
+			"get": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.clusterAgentScript",
+				"parameters": [
+					{
+						"name": "type",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "ClusterId",
+						"in": "query",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "string"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/install": {
+			"put": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.install",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "clusterType",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"status": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/uninstall": {
+			"put": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.uninstall",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "clusterType",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"status": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters": {
+			"get": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.list",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/x-any"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.delete",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"status": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/status": {
+			"get": {
+				"tags": [
+					"cluster"
+				],
+				"operationId": "cluster.getStatus",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "query",
+						"description": "clusters unique name",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"description": "{lifeCycle: {state: 'NOT_PRESENT' | 'CREATING' | 'LIVE' |  'DELETING' | 'ERROR', tenantName: string, tenantID: string, details: string }",
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/instance": {
+			"delete": {
+				"tags": [
+					"cluster"
+				],
+				"summary": "initiates cluster deletion (uninstalls istio) async",
+				"operationId": "cluster.deleteAsync",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/clusters/instance/install": {
+			"put": {
+				"tags": [
+					"cluster"
+				],
+				"summary": "initiates install async",
+				"operationId": "cluster.installAsync",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "clusterType",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"cluster"
+				],
+				"summary": "initiates uninstall async",
+				"operationId": "cluster.uninstallAsync",
+				"parameters": [
+					{
+						"name": "clusterName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "clusterType",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/version": {
+			"get": {
+				"tags": [
+					"version"
+				],
+				"operationId": "version.queryServices",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/x-any"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/services": {
+			"get": {
+				"tags": [
+					"service"
+				],
+				"operationId": "service.list",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/x-any"
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/svcGroup": {
+			"put": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupCreate",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "rules",
+						"in": "body",
+						"description": "Rules are defined as {fn: <AND,OR>, match: {type: <LABLES,NAMESPACE, CLUSTER, NAME>, value: <ValueTOMatch>}, rules: {More Rules}}",
+						"required": true,
+						"schema": {
+							"description": "Rules are defined as {fn: <AND,OR>, match: {type: <LABLES,NAMESPACE, CLUSTER, NAME>, value: <ValueTOMatch>}, rules: {More Rules}}",
+							"type": "object"
+						}
+					},
+					{
+						"name": "color",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "description",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "internalPredefinedGroup",
+						"in": "formData",
+						"required": false,
+						"type": "boolean"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupDelete",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupGet",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"rules": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/svcGroupList": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupList",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/svcGroup/members": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupGetGroupMembers",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"members": {
+									"description": "List of Service names",
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/svcGroup/rulematch/members": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.serviceGroupGetRuleMatchedMembers",
+				"parameters": [
+					{
+						"name": "rules",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"members": {
+									"description": "List of Service names that fit the rules",
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/appGroup": {
+			"put": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.create",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "rules",
+						"in": "body",
+						"description": "Rules are defined as {fn: <AND,OR>, match: {type: <LABLES,NAMESPACE, CLUSTER, NAME>, value: <ValueTOMatch>}, rules: {More Rules}}",
+						"required": true,
+						"schema": {
+							"description": "Rules are defined as {fn: <AND,OR>, match: {type: <LABLES,NAMESPACE, CLUSTER, NAME>, value: <ValueTOMatch>}, rules: {More Rules}}",
+							"type": "object"
+						}
+					},
+					{
+						"name": "color",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "description",
+						"in": "formData",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "internalPredefinedGroup",
+						"in": "formData",
+						"required": false,
+						"type": "boolean"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.delete",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.get",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"rules": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/appGroupList": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.list",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object"
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/appGroup/members": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.getGroupMembers",
+				"parameters": [
+					{
+						"name": "groupName",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"members": {
+									"description": "List of Service names",
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/resourceGroupManager/appGroup/rulematch/members": {
+			"get": {
+				"tags": [
+					"resourceGroupManager"
+				],
+				"operationId": "resourceGroupManager.getRuleMatchedMembers",
+				"parameters": [
+					{
+						"name": "rules",
+						"in": "query",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"members": {
+									"description": "List of Service names that fit the rules",
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/globalNamespace": {
+			"put": {
+				"tags": [
+					"globalNamespace"
+				],
+				"operationId": "globalNamespace.create",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "formData",
+						"description": "Name/ID to address this GNS. This needs to be Unique.",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "domain",
+						"in": "formData",
+						"description": "Domain to use for the GNS. All services within the GNS will address each other with <svcName>.<domain>",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "labels",
+						"in": "formData",
+						"description": "list of labels attached to this domain",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "useSharedGateway",
+						"in": "formData",
+						"description": "If set to true the shared ingress/egress gateway is used for this GNS. Defaults is False",
+						"required": false,
+						"default": false,
+						"type": "boolean"
+					},
+					{
+						"name": "mTLSEnforced",
+						"in": "formData",
+						"description": "If set to true all traffic within this GNS will be mTLS. Default is true.",
+						"required": false,
+						"default": true,
+						"type": "boolean"
+					},
+					{
+						"name": "CAType",
+						"in": "formData",
+						"description": "What type of CA to use for GNS. Options are [PreExistingCA], [NewTrustDomain]",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "CA",
+						"in": "formData",
+						"description": "Which CA to use for identity withing this GNS when CAType = PreExistingCA. Default is set to 'default' CA.",
+						"required": false,
+						"default": "default",
+						"type": "string"
+					},
+					{
+						"name": "members",
+						"in": "formData",
+						"description": "List of memebers. Array of ResourceGroupNames.(i.e. Array<string>)",
+						"required": true,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "color",
+						"in": "formData",
+						"description": "Display Color",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "description",
+						"in": "formData",
+						"description": "Description of GNS Config",
+						"required": false,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"delete": {
+				"tags": [
+					"globalNamespace"
+				],
+				"operationId": "globalNamespace.delete",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "formData",
+						"description": "name/id of gns to delete",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"globalNamespace"
+				],
+				"operationId": "globalNamespace.get",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"name": {
+									"type": "string"
+								},
+								"domain": {
+									"type": "string"
+								},
+								"labels": {
+									"type": "array",
+									"items": {
+										"type": "object"
+									}
+								},
+								"useSharedGateway": {
+									"type": "boolean"
+								},
+								"mTLSEnforced": {
+									"type": "boolean"
+								},
+								"CAType": {
+									"type": "string"
+								},
+								"CA": {
+									"type": "string"
+								},
+								"members": {
+									"type": "array",
+									"items": {
+										"type": "object"
+									}
+								},
+								"color": {
+									"type": "string"
+								},
+								"description": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/globalNamespace/list": {
+			"get": {
+				"tags": [
+					"globalNamespace"
+				],
+				"operationId": "globalNamespace.getGNSList",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"names": {
+									"type": "array",
+									"items": {
+										"type": "object"
+									}
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/globalNamespace/members": {
+			"get": {
+				"tags": [
+					"globalNamespace"
+				],
+				"operationId": "globalNamespace.getGNSMembers",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "query",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"members": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/ca/import": {
+			"put": {
+				"tags": [
+					"ca"
+				],
+				"operationId": "ca.import",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "formData",
+						"description": "Name/ID for this certificates.",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "labels",
+						"in": "formData",
+						"description": "list of labels attached to this CA",
+						"required": false,
+						"type": "string",
+						"format": "JSON"
+					},
+					{
+						"name": "cert",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "certPrivateKey",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "certChain",
+						"in": "formData",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/ca/trustDomain": {
+			"put": {
+				"tags": [
+					"ca"
+				],
+				"operationId": "ca.createTrustDomain",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "formData",
+						"description": "Name/ID for this certificates.",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"name": "domain",
+						"in": "formData",
+						"description": "create a subdomain cert. This is only possible if primary domain cert is imported into the system.",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"name": "parentDomain",
+						"in": "formData",
+						"description": "Parent domain that will use it's CA to sign the domain being created",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/ca": {
+			"delete": {
+				"tags": [
+					"ca"
+				],
+				"operationId": "ca.delete",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "formData",
+						"description": "name of certificate to delete.",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"204": {
+						"description": "Request was successful"
+					}
+				},
+				"deprecated": false
+			},
+			"get": {
+				"tags": [
+					"ca"
+				],
+				"operationId": "ca.get",
+				"parameters": [
+					{
+						"name": "name",
+						"in": "query",
+						"description": "Name of certificate to get details of.",
+						"required": true,
+						"type": "string"
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"details": {
+									"type": "object"
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		},
+		"/ca/list": {
+			"get": {
+				"tags": [
+					"ca"
+				],
+				"operationId": "ca.getcalist",
+				"parameters": [],
+				"responses": {
+					"200": {
+						"description": "Request was successful",
+						"schema": {
+							"type": "object",
+							"properties": {
+								"calist": {
+									"type": "array",
+									"items": {
+										"type": "object"
+									}
+								}
+							}
+						}
+					}
+				},
+				"deprecated": false
+			}
+		}
+	},
+	"tags": [
+		{
+			"name": "user"
+		},
+		{
+			"name": "tenant"
+		},
+		{
+			"name": "installMail"
+		},
+		{
+			"name": "timeseries"
+		},
+		{
+			"name": "cluster"
+		},
+		{
+			"name": "version"
+		},
+		{
+			"name": "service"
+		},
+		{
+			"name": "resourceGroupManager"
+		},
+		{
+			"name": "globalNamespace"
+		},
+		{
+			"name": "ca"
+		}
+	],
+	"consumes": [
+		"application/json",
+		"application/x-www-form-urlencoded",
+		"application/xml",
+		"text/xml"
+	],
+	"produces": [
+		"application/json",
+		"application/xml",
+		"text/xml",
+		"application/javascript",
+		"text/javascript"
+	],
+	"definitions": {
+		"x-any": {
+			"properties": {}
+		},
+		"AccessToken": {
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"ttl": {
+					"default": 1209600,
+					"description": "time to live in seconds (2 weeks by default)",
+					"type": "number",
+					"format": "double"
+				},
+				"scopes": {
+					"description": "Array of scopes granted to this access token.",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"userId": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id"
+			],
+			"additionalProperties": false
+		},
+		"UserRoleModel": {
+			"properties": {
+				"modelId": {
+					"type": "string"
+				},
+				"modelName": {
+					"type": "string"
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"userId": {
+					"type": "string"
+				},
+				"roleId": {
+					"type": "number",
+					"format": "double"
+				}
+			},
+			"additionalProperties": false
+		},
+		"user": {
+			"properties": {
+				"firstName": {
+					"type": "string"
+				},
+				"lastName": {
+					"type": "string"
+				},
+				"phone": {
+					"type": "string"
+				},
+				"realm": {
+					"type": "string"
+				},
+				"username": {
+					"type": "string"
+				},
+				"email": {
+					"type": "string"
+				},
+				"emailVerified": {
+					"type": "boolean"
+				},
+				"id": {
+					"type": "string"
+				},
+				"tenantId": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email"
+			],
+			"additionalProperties": false
+		},
+		"tenantToken": {
+			"properties": {
+				"id": {
+					"type": "string"
+				},
+				"ttl": {
+					"default": 1209600,
+					"description": "time to live in seconds (2 weeks by default)",
+					"type": "number",
+					"format": "double"
+				},
+				"scopes": {
+					"description": "Array of scopes granted to this access token.",
+					"type": "array",
+					"items": {
+						"type": "string"
+					}
+				},
+				"created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"tenantId": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id"
+			],
+			"additionalProperties": false
+		},
+		"tenantClusterConfig": {
+			"properties": {
+				"script": {
+					"type": "string"
+				},
+				"id": {
+					"type": "number",
+					"format": "double"
+				},
+				"tenantId": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"script"
+			],
+			"additionalProperties": false
+		},
+		"tenant": {
+			"properties": {
+				"tenantName": {
+					"type": "string"
+				},
+				"contactEmail": {
+					"type": "string"
+				},
+				"address": {
+					"type": "string"
+				},
+				"companySize": {
+					"type": "string"
+				},
+				"id": {
+					"type": "string"
+				},
+				"created": {
+					"default": "$now",
+					"type": "string",
+					"format": "date-time"
+				},
+				"modified": {
+					"default": "$now",
+					"type": "string",
+					"format": "date-time"
+				},
+				"createdBy": {
+					"type": "string"
+				},
+				"modifiedBy": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"tenantName",
+				"contactEmail"
+			],
+			"additionalProperties": false
+		},
+		"timeseries": {
+			"properties": {
+				"query-name": {
+					"type": "string"
+				},
+				"query-arguments": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/x-any"
+					}
+				},
+				"query-argument-mapper": {
+					"type": "object"
+				},
+				"query-template": {
+					"type": "string"
+				},
+				"query-postprocess": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/x-any"
+					}
+				},
+				"query-description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"query-name",
+				"query-template"
+			],
+			"additionalProperties": false
+		}
+	}
+}

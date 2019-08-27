@@ -1,0 +1,194 @@
+#!/bin/bash
+if [ -z ${WORKDIR} ]; then
+	if [[ $0 =~ ^(.*)/[^/]+$ ]]; then
+		WORKDIR=${BASH_REMATCH[1]}
+	fi
+fi
+if [ -z ${SDDCDIR} ]; then
+	SDDCDIR=${WORKDIR}
+fi
+STATEDIR="${WORKDIR}/state"
+if [ ! -d ${STATEDIR} ]; then
+	mkdir ${STATEDIR}
+fi
+source ${WORKDIR}/drv.core
+source ${WORKDIR}/svm.parameters
+
+function isSuccess {
+	local STRING=${1}
+	local SESSION=$SMSESSION
+	local CODE=$(getCode "${STRING}")
+	printf "[$(ccyan "${CODE}")] - " 1>&2
+	case $CODE in
+		2[0-9][0-9])
+			printf "SUCCESS\n" 1>&2
+		;;
+		40[0-3])
+			printf "ERROR-AUTH\n" 1>&2
+			if [ -f "${SESSION}" ]; then
+				rm "${SESSION}"
+			fi
+		;;
+		*)
+			printf "ERROR\n" 1>&2
+		;;
+	esac
+	local BODY=$(getBody "${STRING}")
+	printf "%s\n" "${BODY}"
+}
+function getCode {
+	local STRING=${1}
+	if [[ $STRING =~ ^(.*)([0-9]{3})$ ]]; then
+		local BODY=${BASH_REMATCH[1]}
+		local CODE=${BASH_REMATCH[2]}
+	fi
+	printf "%s\n" "${CODE}"
+}
+function getBody {
+	local STRING=${1}
+	if [[ $STRING =~ ^(.*)([0-9]{3})$ ]]; then
+		local BODY=${BASH_REMATCH[1]}
+		local CODE=${BASH_REMATCH[2]}
+	fi
+	printf "%s\n" "${BODY}"
+}
+function smLogin {
+	local URL="https://console-stg.cloud.vmware.com/csp/gateway/am/api/auth/api-tokens/authorize"
+	local RESPONSE=$(curl -s -w "%{http_code}" -X POST \
+		-H "accept: application/json" \
+		-H "content-type: application/x-www-form-urlencoded" \
+		-d "refresh_token=${SMTOKEN}" \
+	$URL)
+	local RESULT=$(isSuccess "${RESPONSE}")
+	local CODE=$(getCode "${RESPONSE}")
+	if [[ $CODE =~ 2..$ ]]; then
+		ACCESS_TOKEN=$(echo $RESULT | jq -r '.access_token')
+		printf "%s\n" "${ACCESS_TOKEN}"
+	fi
+}
+function smSession {
+	local SESSION=$SMSESSION
+	local ONLINE=$SMONLINE
+	if [[ "$ONLINE" == "true" ]]; then
+		local RUNFIND="$(find ${SESSION} -mmin -10 2>/dev/null)"
+		if [[ -z ${RUNFIND} ]]; then
+			printf "No valid session found, authenticating... " 1>&2
+			local LOGIN=$(smLogin)
+			if [[ -n ${LOGIN} ]]; then
+				echo "${LOGIN}" >"$SESSION"
+			fi
+		fi
+	fi
+	printf "%s\n" "$(cat "${SESSION}" 2>/dev/null)"
+}
+function buildURL {
+	local ENDPOINT="${1}"
+	local BASE="${2}"
+	if [ -z ${BASE} ]; then
+		BASE="${SMBASE}"
+	fi
+	local STATE="${STATEDIR}"
+	local ONLINE="${SMONLINE}"
+	if [[ "$ONLINE" == "true" ]]; then
+		local SUCCESS=$(smSession)
+		if [[ -n ${SUCCESS} ]]; then
+			URL="$BASE$ENDPOINT"
+		else
+			URL="" #failed to obtain valid session
+		fi
+	else
+		local FILE=$(getFile "${ENDPOINT}" "${BASE}")
+		URL="${STATE}/sm${FILE}"
+	fi
+	printf "$URL"
+}
+function smGet {
+	local SESSION=$SMSESSION
+	local ONLINE=$SMONLINE
+	local URL=${1}
+	local BASE=${2}
+	if [ -z ${BASE} ]; then
+		BASE="${SMBASE}"
+	fi
+	if [[ "$ONLINE" == "true" ]]; then
+		local FILE=$(getFile "${URL}" "${BASE}")
+		STATE="${STATEDIR}/sm${FILE}"
+		RESPONSE=$(curl -k -k -w "%{http_code}" -X GET \
+			-H "Content-Type: application/json" \
+			-H "csp-auth-token: $(cat ${SESSION})" \
+		"$URL" 2>/dev/null)
+		RESULT=$(isSuccess "${RESPONSE}")
+	else
+		printf "[$(ccyan "OFFLINE")] - SUCCESS\n" 1>&2
+		RESULT=$(cat "${URL}")
+		STATE="${URL}"
+	fi
+	#printf "%s\n" "${RESULT}" | jq --tab . >"${STATE}"
+	#printf "%s\n" "${RESULT}" | jq --tab .
+	printf "%s\n" "${RESULT}"
+}
+function smPost {
+	local SESSION=$SMSESSION
+	local ONLINE=$SMONLINE
+	local URL=${1}
+	local BODY=${2}
+	if [[ "$ONLINE" == "true" ]]; then
+		RESPONSE=$(curl -k -s -w "%{http_code}" -X POST \
+			-H "Content-Type: application/json" \
+			-H "csp-auth-token: $(cat ${SESSION})" \
+			-d "${BODY}" \
+		"$URL" 2>/dev/null)
+		RESULT=$(isSuccess "${RESPONSE}")
+	else
+		printf "[$(ccyan "OFFLINE")] - SUCCESS\n" 1>&2
+	fi
+	printf "%s\n" "${RESULT}" | jq --tab .
+}
+function smPut {
+	local SESSION=$SMSESSION
+	local ONLINE=$SMONLINE
+	local URL=${1}
+	local BODY=${2}
+	if [[ "$ONLINE" == "true" ]]; then
+		RESPONSE=$(curl -k -s -w "%{http_code}" -X PUT \
+			-H "Content-Type: application/json" \
+			-H "csp-auth-token: $(cat ${SESSION})" \
+			-d "${BODY}" \
+		"$URL" 2>/dev/null)
+		RESULT=$(isSuccess "${RESPONSE}")
+	else
+		printf "[$(ccyan "OFFLINE")] - SUCCESS\n" 1>&2
+	fi
+	printf "%s\n" "${RESULT}" | jq --tab .
+}
+function smDelete {
+	local SESSION=$SMSESSION
+	local ONLINE=$SMONLINE
+	local URL=${1}
+	local BODY=${2}
+	if [[ "$ONLINE" == "true" ]]; then
+		STATE=$(getFile "${URL}")
+		RESPONSE=$(curl -k -s -w "%{http_code}" -X DELETE \
+			-H "Content-Type: application/x-www-form-urlencoded" \
+			-H "Accept: application/json" \
+			-H "csp-auth-token: $(cat ${SESSION})" \
+		"$URL" 2>/dev/null)
+		#curl -vvv -k -X DELETE \
+		#	-H "Content-Type: application/json" \
+		#	-H "Accept: application/json" \
+		#	-H "csp-auth-token: $(cat ${SESSION})" \
+		#	-d "${BODY}" \
+		#"$URL"
+		#curl -vvv -k -X DELETE \
+		#	-H "Content-Type: application/x-www-form-urlencoded" \
+		#	-H "Accept: application/json" \
+		#	-H "csp-auth-token: $(cat ${SESSION})" \
+		#	--data-urlencode 'clusterName=dc-cluster-east' \
+		#"$URL"
+		RESULT=$(isSuccess "${RESPONSE}")
+	else
+		printf "[$(ccyan "OFFLINE")] - SUCCESS\n" 1>&2
+	fi
+	#work out state synch for deletes
+	printf "%s\n" "${RESULT}" | jq --tab .
+}
