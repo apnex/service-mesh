@@ -65,7 +65,7 @@ Refer to **SYNTAX** for full individual command descriptions.
 
 This will authenticate to the VKE platform and set the local `kubectl` context.  
 
-#### 2: Download the NSX-SM onboarding YAML script
+#### 2: Download the NSX Service Mesh onboarding YAML script
 ```shell
 ./cmd.clusters.script.get.sh dc-cluster-east
 ```
@@ -93,7 +93,7 @@ This will monitor NSX-SM proxy pod creation on your cluster.
 
 This will execute each of the steps 2-4 upon pressing the enter key (useful for demos).  
 
-#### 5: Monitor registration progress in NSX-SM
+#### 5: Monitor registration progress in NSX Service Mesh
 ```shell
 watch -c -n 5 "./cmd.clusters.status.sh 2>/dev/null"
 ```
@@ -112,7 +112,7 @@ dc-cluster-east  LIVE_NO_SM  connected, but not aware of istio in this cluster
 ./cmd.clusters.instance.install.put.sh dc-cluster-east
 ```
 
-This will kick off the an asynchronous ISTIO data-plane installation for your cluster.  
+This will kick off an asynchronous ISTIO data-plane installation for your cluster.  
 ```shell
 id               state       details
 --               -----       -------
@@ -156,7 +156,7 @@ This will authenticate to the VKE platform and set the local `kubectl` context.
 ./cmd.clusters.instance.install.delete.sh dc-cluster-east
 ```
 
-This will kick off the an asynchronous ISTIO data-plane removal for your cluster.  
+This will kick off an asynchronous ISTIO data-plane removal for your cluster.  
 ```shell
 id               state         details
 --               -----         -------
