@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# NSX Service Mesh Parameters
+SMHOST="staging-1.servicemesh.biz"
+SMTOKEN="<insert-service-mesh-token-here>"
+
 # VKE Cloud Services Organisation Details
 CSP_ORGANIZATION_ID="12345678-1234-1234-1234-123456781234"
 CSP_REFRESH_TOKEN="12345678-1234-1234-1234-123456781234"

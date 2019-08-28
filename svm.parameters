@@ -1,8 +1,0 @@
-#!/bin/bash
-
-# service mesh parameters
-SMSESSION="${STATEDIR}/sm.token.txt"
-SMONLINE="true"
-SMHOST="staging-1.servicemesh.biz"
-SMBASE="https://${SMHOST}/local/v0/"
-SMTOKEN="<insert-service-mesh-token-here>"

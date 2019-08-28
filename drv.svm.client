@@ -12,7 +12,12 @@ if [ ! -d ${STATEDIR} ]; then
 	mkdir ${STATEDIR}
 fi
 source ${WORKDIR}/drv.core
-source ${WORKDIR}/svm.parameters
+source ${WORKDIR}/parameters
+
+## parameters
+SMSESSION="${STATEDIR}/sm.token.txt"
+SMONLINE="true"
+SMBASE="https://${SMHOST}/local/v0/"
 
 function isSuccess {
 	local STRING=${1}

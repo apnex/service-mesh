@@ -4,7 +4,7 @@ if [[ $0 =~ ^(.*)/([^/]+)$ ]]; then
 	CMDNAME=${BASH_REMATCH[2]}
 fi
 source ${WORKDIR}/drv.core
-source ${WORKDIR}/vke.parameters
+source ${WORKDIR}/parameters
 
 VKE_CLUSTER_NAME=${1}
 if [[ -n "${VKE_CLUSTER_NAME}" ]]; then
