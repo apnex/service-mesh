@@ -1,6 +1,6 @@
 # service-mesh CLI
-`service-mesh` cmdlets consists of a BASH based REST-client for interacting with the nsx-service-mesh platform API.  
-It provides a series of CLI commands for NSX-SM registration, istio lifecycle and cluster deletion.  
+`service-mesh` cmdlets consists of a BASH based REST-client for interacting with the **VMware NSX Service Mesh** platform API.  
+It provides a series of CLI commands for NSX-SM registration, ISTIO lifecycle and cluster deletion.  
 
 It is intended to be stupidly simple.  
 Ideal for lab or demo purposes.  
